@@ -11,3 +11,6 @@ artifacts
 #backup files
 test/sample-test.js.bk
 hardhat.config.js.bk
+
+# memo
+NOTE.md
