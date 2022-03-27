@@ -20,6 +20,12 @@ contract knft is ERC721URIStorage {
   function createknft() public returns(uint256) {
     uint256 newItemId = _tokenId.current();
 
+    //string memory baseSvg = "<svg viewBox='0 0 350 350' xmlns='http://www.w3.org/2000/svg' >";
+    //string memory baseSvg = "<style>.base { fill: white; font-family: serif; font-size: 24px; }</style>";
+    //string memory baseSvg = "<circle cx='175' cy='175' r='175' width='100%' height='100%' fill='black'></circle>";
+    //string memory baseSvg = "<text x='50%' y='50%' class='base' dominant-baseline='middle' text-anchor='middle'>Token #{num}</text>";
+    //string memory baseSvg = "</svg>"
+
     string memory baseSvg = "<svg viewBox='0 0 350 350' xmlns='http://www.w3.org/2000/svg' ><style>.base { fill: white; font-family: serif; font-size: 24px; }</style><circle cx='175' cy='175' r='175' width='100%' height='100%' fill='black'></circle><text x='50%' y='50%' class='base' dominant-baseline='middle' text-anchor='middle'>Token #";
 
     string memory finalSvg = string(abi.encodePacked(baseSvg, Strings.toString(newItemId), "</text></svg>"));
