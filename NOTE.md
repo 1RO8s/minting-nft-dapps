@@ -59,12 +59,34 @@ Contract deployed to:  0x67a932469fd0279F9cC205575282B53961c9DD80
 
 ```
 
+## フロントエンドの設定
+
+Next.jsアプリの作成
+```
+npx create-next-app -e with-tailwindcss client
+```
+
+### index.jsで使用されている関数
+- `checkIfWalletIsConnected`：ウォレットがアプリケーションに接続されているかをチェックする関数
+- `connectWallet`：Dappsをウォレットに接続するための関数
+- `checkCorrectNetwork`：ウォレットが正しいネットワーク（Rinkeby）に接続されているかをチェックする関数
+- `mintCharacter`：新しいNFTをミントするためのトランザクションを作成する関数。「Mint Character」を押したときに呼び出します  
+- `getMintedNFT`：新しくミントされたNFTのデータを取得します。取得したデータはユーザーに見せるために使用します。
+
+## Conclusion
+Congratulations!  
+on deploying your first Smart Contract to ETH blockchain and also creating a Dapp to mint NFTs.
+
 
 ---
 ## Q&A
 
 ### Q.ethers.getContractFactory('knft')とは？
-あとで調べる
+作成したコントラクトを呼び出すための記載。  
+```js
+ethers.getContractFactory("CONTRACT_NAME")
+```
+今回はknft.solに記載したknftコントラクトの名前を呼び出すため、上記の記載になっている。
 
 
 ### Q.process.exit()とは？
